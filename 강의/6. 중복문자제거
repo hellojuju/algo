@@ -1,0 +1,17 @@
+import java.util.Scanner;
+  
+public class Main {
+  public static void main(String[] args){
+    Scanner in=new Scanner(System.in);
+    String txt = in.next().toString();
+    String result ="";
+    boolean[] isEx = new boolean[26];
+    for (char c : txt.toCharArray()) {
+      if (!isEx[122 - c]) {
+        result += c;
+      }
+      isEx[122 - c] = true;
+    }
+    System.out.println(result);
+  }
+}
