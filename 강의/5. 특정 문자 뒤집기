@@ -1,0 +1,39 @@
+  /**
+   A ~ Z    (대문자)	65 ~ 90
+   a ~ z    (소문자)	97 ~ 122
+   0 ~ 9    (숫자)	48 ~ 57
+   */
+   import java.util.Scanner;
+  
+public class Main {
+  public static void main(String[] args){
+    Scanner in=new Scanner(System.in);
+    String text = in.next().toString();
+   if (text == "" || text == null) {
+      System.out.println("");
+    }
+
+    char[] txtArr = text.toCharArray();
+    int[] idxArr = new int[text.length()];
+    int idxArridx = 0;
+    String rsltTxt = "";
+    for (int i = 0; i < txtArr.length; i++) {
+      char tmp = txtArr[i];
+
+      if ((tmp >= 65 && tmp <= 90) || (tmp >= 97 && tmp <= 122)) {
+        idxArr[idxArridx++] = i;
+      }
+    }
+    idxArridx--;
+
+    for (int i = 0; i < txtArr.length; i++) {
+      char tmp = txtArr[i];
+      if ((tmp >= 65 && tmp <= 90) || (tmp >= 97 && tmp <= 122)) {
+        rsltTxt += txtArr[idxArr[idxArridx--]];
+      } else {
+        rsltTxt += tmp;
+      }
+    }
+    System.out.println(rsltTxt);
+  }
+}
