@@ -3,9 +3,9 @@ import java.util.*;
 public class Main {
   public static void main(String[] args){
     Scanner in=new Scanner(System.in);
- 	String txt = in.next();
+ 	  String txt = in.next();
     char key = in.next().charAt(0);
-    int p =1000;
+    int p = 1000;
     int min = 999;
     int[] minarr = new int[txt.length()];
     for (int i = 0; i < txt.length(); i++) {
@@ -18,7 +18,7 @@ public class Main {
       }
     }
 
-    p =1000;
+    p = 1000;
     for (int i = txt.length()-1; i >= 0; i--) {
       if(txt.charAt(i)== key){
         p =0;
