@@ -1,0 +1,27 @@
+/**
+* Stack을 이용한 방식 
+*/
+import java.util.*;
+  
+public class Main {
+  public static void main(String[] args){
+    Scanner in=new Scanner(System.in);
+    String txt = in.next().toString();
+    Stack<String> st = new Stack<>();
+  	txt = txt.toLowerCase();
+  	char[] txtarr = txt.toCharArray();
+  	for (char c : txtarr) {
+    	String tmp = ""+c;
+    	st.add(tmp);
+  	}
+  	String reverse ="";
+  	while(!st.isEmpty()){
+   	 reverse+=st.pop();
+  	}
+  	if (txt.equals(reverse)) {
+    	System.out.println("YES");
+  	}else{
+    	System.out.println("NO");
+  	}
+  }
+}
